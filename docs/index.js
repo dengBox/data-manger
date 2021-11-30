@@ -21,8 +21,16 @@
       isArray
   };
 
+  // if (process.env.NODE_ENV === 'production') {
+  //   import('../public/scss/index.scss').then(res => {
+  //     console.log('加载文档样式')
+  //   })
+  // }
   console.log('', until);
   class DataManger {
+      constructor(options) {
+          console.log(options);
+      }
   }
 
   return DataManger;
