@@ -33,8 +33,8 @@ const Plugins = isProduction
     })
   ]
   : [
-    serve({ contentBase: 'docs' }), // open: true
-    livereload('docs')
+    serve({ contentBase: './' }), // open: true
+    livereload('./')
   ]
 
 const getPath = (_path) => path.resolve(__dirname, _path)
@@ -60,19 +60,19 @@ const commonConf = {
   },
   plugins: [
     postcss({
-      plugins: [cssnext, cssnano],
-      extract: path.resolve(__dirname, `./docs/${packageJSON.name}.css`) // 输出路径
+      plugins: [cssnext, cssnano]
+      // extract: getPath(`../docs/${packageJSON.name}.css`) // 输出路径
     }),
     resolve(extensions),
     commonjs(),
     esPlugin,
     tsPlugin,
     template({
-      template: './public/index.html',
-      target: './docs/index.html',
-      replaceVars: {
-        __STYLE_URL__: `${packageJSON.name}.css`
-      }
+      template: './docs/index.html',
+      target: getPath('./index.html')
+      // replaceVars: {
+      //   __STYLE_URL__: `./lib/${packageJSON.name}.css`
+      // }
     }),
     ...Plugins
   ]

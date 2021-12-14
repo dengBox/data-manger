@@ -1,8 +1,8 @@
 import until from './helpers/utils'
 import { Options } from './interface'
 
-// 开发文档时 引入样式
-import '../public/scss/index.scss'
+// 开发文档时 引入样式（umd模式不支持code-split）
+import '../docs/scss/index.scss'
 
 // if (process.env.NODE_ENV === 'production') {
 //   import('../public/scss/index.scss').then(res => {

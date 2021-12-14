@@ -2,8 +2,8 @@
   "name": "data-manger",
   "version": "0.0.1",
   "description": "管理数据的工具",
-  "main": "docs/index.js",
-  "module": "docs/index.esm.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
   "types": "./index.d.ts",
   "keywords": [
     "vue",
